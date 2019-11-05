@@ -1,8 +1,6 @@
 .animated-bg {
-  color: --white-color;
   background: linear-gradient(-45deg, rgba(35, 213, 171, 0.7), rgba(196, 113, 237, 0.7), rgba(18, 194, 233, 0.7), rgba(246, 79, 89, 0.7));
   background-size: 400% 400%;
-  
   animation: change 5s ease-in-out infinite;
 }
 

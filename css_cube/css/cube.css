@@ -1,0 +1,67 @@
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* UTILITY */
+
+:root {
+  --face-color: rgba(95, 95, 95, 0.7);
+}
+
+.scene {
+  margin: 0 auto;
+  margin-top: 275px;
+  width: 300px;
+  height: 300px;
+  perspective: 800px;
+}
+
+/* CUBE */
+.cube {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: 1s;
+}
+
+.cube-face {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(33, 24, 100, 0.7);
+}
+
+.cube-face-front,
+.cube-face-right,
+.cube-face-back,
+.cube-face-left,
+.cube-face-top,
+.cube-face-bottom {
+  background: var(--face-color);
+}
+
+.cube-face-front  { transform: rotateY(   0deg) translateZ( 150px); }
+.cube-face-right  { transform: rotateY(  90deg) translateZ( 150px); }
+.cube-face-back   { transform: rotateY( 180deg) translateZ( 150px); }
+.cube-face-left   { transform: rotateY( -90deg) translateZ( 150px); }
+.cube-face-top    { transform: rotateX(  90deg) translateZ( 150px); }
+.cube-face-bottom { transform: rotateX( -90deg) translateZ( 150px); }
+
+@keyframes rotating {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  to {
+    transform: rotate3d(-4, 5, 7, -360deg);
+  }
+}
+
+.rotate {
+  animation: rotating 10s linear infinite;
+}
